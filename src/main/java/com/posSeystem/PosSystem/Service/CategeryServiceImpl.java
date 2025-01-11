@@ -33,5 +33,23 @@ public class CategeryServiceImpl implements CategeryService{
         
         return categeryRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public Categery updateCategory(Long id, Categery categery) {
+       Categery categery2= categeryRepository.findById(id).orElse(null);
+
+       if(categery2 == null){
+        return null;
+       }else{
+        categery2.setName(categery.getName());
+
+        return categeryRepository.save(categery2);
+       }
+    }
+
+    @Override
+    public void DeleteCategory(Long id) {
+       categeryRepository.deleteById(id);
+    }
     
 }

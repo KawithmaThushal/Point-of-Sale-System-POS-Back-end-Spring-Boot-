@@ -22,6 +22,8 @@ import com.posSeystem.PosSystem.Service.ItemService;
 
 
 
+
+
 @RestController
 @CrossOrigin(origins = "*")
 public class ItemController {
@@ -32,6 +34,9 @@ public class ItemController {
     @Autowired
     private CategeryService categeryService;
 
+//    @Autowired
+//    private itemRepository itemRepository;
+
 
     @GetMapping("/item")
     public ResponseEntity<List<Item>> getAllItem() {
@@ -39,6 +44,23 @@ public class ItemController {
 
         return ResponseEntity.status(200).body(items);
     }
+
+
+    @GetMapping("/category/{categoryId}")
+    public ResponseEntity<List<Item>> getItemsByCategory(@PathVariable Long categoryId) {
+      
+        List<Item> items= itemService.getItemsByCategoryId(categoryId);
+     
+        if (!items.isEmpty()) {
+            return ResponseEntity.ok(items);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+        
+
+
+    }
+    
     
     @PostMapping("/item")
     public ResponseEntity<Item> creatItem(@RequestBody ItemDto entity) {

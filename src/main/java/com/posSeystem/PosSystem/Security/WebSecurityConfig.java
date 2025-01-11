@@ -73,7 +73,7 @@ public class WebSecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll() // Allow access to the `/auth/**` endpoints
+                        .requestMatchers("/**").permitAll() // Allow access to the `/auth/**` endpoints
 
                         .anyRequest().authenticated() // All other requests require authentication
                 );

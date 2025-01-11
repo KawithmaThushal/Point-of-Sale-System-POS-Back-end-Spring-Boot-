@@ -1,37 +1,42 @@
+
 package com.posSeystem.PosSystem.Entity;
+
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Getter;
 import lombok.Setter;
+
 @Setter
 @Getter
 @Entity
-public class Item {
-
+public class Stock {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
+    private Long quaitiy;
+    
     private Double price;
 
-    private String discription;
+    private Date expireDate;
 
-    // how to add image data type
-    @Lob
-    private byte[] image;
+     @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private Date addedDate;
 
-    private Long quantity;
 
     @ManyToOne
-    @JoinColumn(name = "Category_id")
-    private Categery category;
-    
+    @JoinColumn(name = "product_id")
+    private Product product;
 }

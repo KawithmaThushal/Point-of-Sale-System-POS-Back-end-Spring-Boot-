@@ -16,6 +16,7 @@ private itemRepository repository;
 
     @Override
     public List<Item> gettAllItem() {
+    
             return repository.findAll();
     }
 
@@ -52,5 +53,11 @@ private itemRepository repository;
     public void DeleteItem(Long id) {
         repository.deleteById(id);
     }
-    
+
+    @Override
+    public List<Item> getItemsByCategoryId(Long categoryId) {
+        return repository.findByCategoryId(categoryId);
+    }
+
+   
 }

@@ -29,6 +29,11 @@ public class Categery {
     @OneToMany(mappedBy = "category")
     private List<Item> items;
 
+    @JsonIgnore
+
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
+
     
     
 }

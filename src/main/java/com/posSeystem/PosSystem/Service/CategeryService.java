@@ -11,6 +11,9 @@ public interface CategeryService {
 
     List<Categery> getAllCategery();
     Categery creatCategory(Categery categery);
+    Categery updateCategory(Long id,Categery categery);
     Categery getFindCategery(Long id);
+    void DeleteCategory(Long id);
+
     
 }

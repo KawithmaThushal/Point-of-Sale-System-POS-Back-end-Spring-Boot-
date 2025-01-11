@@ -13,7 +13,8 @@ public interface ItemService {
     Item creatItem(Item item);
     Item getItemId(Long id);
     Item updateItem(Long id, Item item);
-    void DeleteItem(Long id);
+    void DeleteItem(Long id); 
+    List<Item> getItemsByCategoryId(Long categoryId);
 
 
     
