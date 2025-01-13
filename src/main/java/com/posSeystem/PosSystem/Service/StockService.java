@@ -19,5 +19,10 @@ public interface StockService {
      void toggleDayFoodAvailability(Long id, Boolean isAvailable);
      void deleteDayStock(Long id);
 
+     List<Stock> getBeverageItem();
+     List<Stock> getIceCreamItem();
+     List<Stock> getShortiesItem();
+     List<Stock> getLowQuantityStock();
+
     
 }

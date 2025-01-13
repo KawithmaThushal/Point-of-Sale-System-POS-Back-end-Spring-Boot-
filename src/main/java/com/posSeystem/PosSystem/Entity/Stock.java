@@ -31,7 +31,7 @@ public class Stock {
 
     private Date expireDate;
 
-     @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date addedDate;
 

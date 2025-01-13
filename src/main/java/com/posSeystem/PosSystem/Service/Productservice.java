@@ -13,8 +13,8 @@ public interface Productservice {
     Product creatProduct(Product product);
     void deleteproduct(Long id);
     Product updateProduct(Long id, Product product);
-     Product getFindProduct(Long id);
-     List<Product> getProductsByType(String foodType);
+    Product getFindProduct(Long id);
+    List<Product> getProductsByType(String foodType);
 
 
     

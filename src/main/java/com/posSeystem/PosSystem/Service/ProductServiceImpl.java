@@ -14,6 +14,8 @@ public class ProductServiceImpl implements Productservice{
     @Autowired
     private ProductRepository productRepository;
 
+    
+
     @Override
     public Product creatProduct(Product product) {
 
@@ -66,5 +68,9 @@ public class ProductServiceImpl implements Productservice{
     public List<Product> getProductsByType(String foodType) {
         return productRepository.findByFoodType(foodType);
     }
+
+   
+   
+
     
 }

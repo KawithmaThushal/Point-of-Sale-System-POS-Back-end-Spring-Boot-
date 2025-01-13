@@ -32,7 +32,7 @@ public class ProductController {
     private Productservice productservice;
     @Autowired
     private CategeryService categeryService;
-
+   
 
     @GetMapping("/Product")
     public ResponseEntity<List<Product>> getProduct() {
@@ -114,6 +114,10 @@ public class ProductController {
             e.getMessage();
             return ResponseEntity.status(500).build();        }
     }
+
+    
+
+ 
 
 
     

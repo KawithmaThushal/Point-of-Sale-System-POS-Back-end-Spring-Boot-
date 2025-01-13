@@ -27,10 +27,29 @@ public class Order {
     private float netAmount;
 
     @Column(nullable = false)
+    private float ServiceCharge;
+
+    private float Discount;
+
+    private float Cash;
+
+    private float Balance;
+
+    private String OderType;
+
+    @Column(nullable = false)
+    private float FullAmount;
+
+    @Column(columnDefinition = "TEXT") // Store JSON as text
+    private Long[] productIds;
+
+    @Column(nullable = false)
     private Long quantity;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime issuesDate;
+
+
 
     @PrePersist
     protected void onCreat(){
