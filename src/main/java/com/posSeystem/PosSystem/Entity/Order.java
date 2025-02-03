@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import lombok.Getter;
 import lombok.Setter;
+
 @Setter
 @Getter
 @Entity
@@ -40,8 +41,9 @@ public class Order {
     @Column(nullable = false)
     private float FullAmount;
 
-    @Column(columnDefinition = "TEXT") // Store JSON as text
+    @Column(columnDefinition = "json")
     private Long[] productIds;
+
 
     @Column(nullable = false)
     private Long quantity;
@@ -57,5 +59,22 @@ public class Order {
                 this.issuesDate=LocalDateTime.now();
         }
     }
+
+//     @Override
+// public String toString() {
+//     return "Order{" +
+//             "invNo=" + invNo +
+//             ", netAmount=" + netAmount +
+//             ", serviceCharge=" + ServiceCharge +
+//             ", discount=" + Discount +
+//             ", cash=" + Cash +
+//             ", balance=" + Balance +
+//             ", orderType='" + OderType + '\'' +
+//             ", fullAmount=" + FullAmount +
+//             ", productIds=" + (productIds != null ? java.util.Arrays.toString(productIds) : null) +
+//             ", quantity=" + quantity +
+//             ", issuesDate=" + issuesDate +
+//             '}';
+// }
     
 }

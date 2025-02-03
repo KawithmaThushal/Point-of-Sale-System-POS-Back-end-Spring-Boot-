@@ -15,6 +15,8 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Order creatOrder(Order order) {
+        System.out.println("Creating order: " + order);
+
         return orderRepository.save(order);       
     }
 

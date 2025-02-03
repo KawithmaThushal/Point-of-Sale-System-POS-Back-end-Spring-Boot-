@@ -21,7 +21,7 @@ import com.posSeystem.PosSystem.Service.OrderService;
 @CrossOrigin(origins = "*")
 public class OrderContoleer {
     
-      String odt="Take Away";
+    
 
    @Autowired
    private OrderService orderService;
@@ -40,8 +40,9 @@ public class OrderContoleer {
                 od1.setServiceCharge(entity.getServiceCharge());
                 od1.setOderType(entity.getOderType());
                 od1.setProductIds(entity.getProductIds());
-                od1.setFullAmount(entity.getNetAmount()+entity.getServiceCharge());
+                od1.setFullAmount(entity.getFullAmount());
                 Order order2= orderService.creatOrder(od1);
+                System.out.println(od1);
                 return ResponseEntity.status(201).body(order2);
 
          
